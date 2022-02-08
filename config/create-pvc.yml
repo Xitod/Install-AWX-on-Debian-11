@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: awx-prod-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: awx-projects-volume
+  resources:
+    requests:
+      storage: 5Gi

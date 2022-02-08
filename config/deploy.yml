@@ -1,0 +1,27 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx
+spec:
+  admin_user: admin
+  admin_password_secret: awx-prod-admin-secret
+
+  postgres_configuration_secret: awx-prod-postgres-secret
+
+  ingress_type: ingress
+  ##### To Modify #####
+  hostname: your.domain.local
+  ##### ~~~~~~~~~~ #####
+  service_type: ClusterIP
+
+  projects_persistence: true
+  projects_storage_access_mode: ReadWriteOnce
+  projects_existing_claim: awx-prod-claim
+  #web_extra_volume_mounts: |
+  #  - name: static-data
+  #    mountPath: /var/lib/projects
+  #extra_volumes: |
+  #  - name: static-data
+  #    persistentVolumeClaim:
+  #      claimName: awx-prod-claim
