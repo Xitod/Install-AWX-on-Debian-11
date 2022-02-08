@@ -160,5 +160,5 @@ awx-operator-controller-manager-8d479fd7dd-okt4k   2/2     Running   0          
 awx-postgres-0                                     1/1     Running   0          5m23
 awx-7c83der4c1-zn782                               4/4     Running   0          4m
 ```
-Now, you can access to your AWX instance using the hostname you specified.
+Now, you can access to your AWX instance using the hostname you specified
 `http://your.domain.local`
