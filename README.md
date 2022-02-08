@@ -9,6 +9,12 @@ Here is an easy setup to configure and deploy AWX Operator on a single node usin
 - [Preparation](#preparation)
   - [Space provisioning](#space-provisioning)
   - [Required packages](#required-packages)
+- [Installation](#installation)
+  - [Install Ansible](#install-ansible)
+  - [Install k3s](#install-k3s)
+  - [Deploy AWX Operator](#deploy-awx-operator)
+  - [Prepare config file](#prepare-config-file)
+  - [Deploy AWX Instance](#deploy-awx-instance)
 
 ## Sources
 - [awx-on-k3s from kurokobo](https://github.com/kurokobo/awx-on-k3s) (special thanks)
