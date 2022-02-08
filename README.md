@@ -15,6 +15,8 @@ Here is an easy setup to configure and deploy AWX on a single node using k3s. Th
   - [Deploy AWX Operator](#deploy-awx-operator)
   - [Prepare config file](#prepare-config-file)
   - [Deploy AWX Instance](#deploy-awx-instance)
+- [Tips](#tips)
+  - [Corporate proxy](#corporate-proxy) 
 
 ## Sources
 - [awx-on-k3s from kurokobo](https://github.com/kurokobo/awx-on-k3s) (special thanks)
@@ -172,3 +174,33 @@ awx-7c83der4c1-zn782                               4/4     Running   0          
 ```
 Now, you can access to your AWX instance using the hostname you specified
 `http://your.domain.local`
+
+## Tips
+### Corporate proxy
+In a corporate environment, you may be behind a proxy. I will try to give details to avoid a lost of time !
+##### Classic configuration
+Use this command to setup your proxy environment.
+```bash
+export {http_proxy,https_proxy}=http://[proxy-dns-name-or-ip]:PORT
+```
+If you need to be authenticate, add them to the command.
+```bash
+export {http_proxy,https_proxy)=http://USERNAME:PASSWORD@[proxy-dns-name-or-ip]:PORT
+```
+##### APT
+Modify your file /etc/apt/apt.conf and add this lines.
+```bash
+Acquire::http::Proxy "http://[proxy-dns-name-or-ip]:PORT";
+Acquire::https::Proxy "https://[proxy-dns-name-or-ip]:PORT";
+```
+*Of course, you can personalize the command following your configuration.*
+
+To add key with `apt-key add`, use this command.
+```bash
+sudo apt-key adv --keyserver-options http-proxy=[proxy-dns-name-or-ip]:PORT
+```
+##### CURL	
+To use curl behind a proxy server.
+```bash
+curl --proxy http://[proxy-dns-name-or-ip]:PORT
+```
