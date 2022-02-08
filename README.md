@@ -1,5 +1,5 @@
 # Install AWX on Debian 11 using k3s
-Here is an easy setup to configure and deploy AWX Operator on a single node using k3s. This node will be use as an ansible master to monitore your infrastructure.
+Here is an easy setup to configure and deploy AWX on a single node using k3s. This node will be use as an ansible master to monitore your infrastructure.
 
 *This setup can be used in production environment.*
 
