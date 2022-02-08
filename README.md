@@ -118,11 +118,7 @@ secretGenerator:
   - name: awx-prod-postgres-secret
   type: Opaque
   literals:
-    - host=awx-postgres
-    - port=5432
-    - database=awx
     - username=awx
-    - type=managed
     ##### TO Modify #####
     - password=DatabasePassword
     ##### ~~~~~~~~~~ #####
