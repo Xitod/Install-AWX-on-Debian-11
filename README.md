@@ -2,6 +2,14 @@
 Here is an easy setup to configure and deploy AWX Operator on a single node using k3s. This node will be use as an ansible master to monitore your infrastructure.
 
 *This setup can be used in production environment.*
+
+## Index
+- [Sources](#sources)
+- [Environment](#environment)
+- [Preparation](#preparation)
+  - [Space provisioning](#space-provisioning)
+  - [Required packages](#required-packages)
+
 ## Sources
 - [awx-on-k3s from kurokobo](https://github.com/kurokobo/awx-on-k3s) (special thanks)
 - [awx-operator](https://github.com/ansible/awx-operator)
